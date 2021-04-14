@@ -1,0 +1,1 @@
+web: ./build/install/testing-spark-heroku/bin/testing-spark-heroku
