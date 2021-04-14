@@ -20,3 +20,14 @@ test {
 applicationName = "testing-spark-heroku"
 mainClassName = 'App'
 task stage(dependsOn: ['clean', 'installDist'])
+
+/*
+The stage task on line 25 is needed for any Spark application deployed to Heroku.
+We list the clean and installDist tasks as dependencies for this task.
+The installDist task is what creates the testing-spark-heroku.
+We set the applicationName variable to "testing-spark-heroku" in line 23.
+The installDist task uses this variable to create the binary file.
+If, for example, you set the applicationName variable to "restaurant",
+a binary named restaurant would be created in the ./build/install/restaurant/bin/ directory.
+You need to create the Procfile with this in mind.
+*/
